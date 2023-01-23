@@ -79,7 +79,7 @@ const ChurrasProvider = ({ children }: ChurrasContextProps): JSX.Element => {
 
       let newChurrasDetails = { ...churrasDetails, guests: newGuests };
 
-      await api.patch(`churras/${churrasId}`, {
+      await api.put(`churras/${churrasId}`, {
         ...newChurrasDetails,
         guests: newGuests,
       });
