@@ -1,6 +1,7 @@
 import {
   BasicInfoContainer,
   ButtonContainer,
+  ChurrasListFooterContainer,
   Container,
   FormContainer,
   GuestListContainer,
@@ -13,6 +14,7 @@ import { useParams } from "react-router-dom";
 import ChurrasListGuest from "../../components/ChurrasListGuest";
 import { Link } from "react-router-dom";
 import { priceFormatter } from "../../utils/formater";
+import { Footer } from "../../components/Layout/Footer";
 
 export default function ChurrasList() {
   const { churrascos } = useContext(ChurrasContext);
@@ -84,6 +86,9 @@ export default function ChurrasList() {
           </Link>
         </ButtonContainer>
       </FormContainer>
+      <ChurrasListFooterContainer>
+        <Footer />
+      </ChurrasListFooterContainer>
     </Container>
   );
 }

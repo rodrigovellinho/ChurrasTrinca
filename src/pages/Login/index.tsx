@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { LoginContainer, FormBox, LoginButton, LoginBox } from "./styles";
+import {
+  LoginContainer,
+  FormBox,
+  LoginButton,
+  LoginBox,
+  LoginFooterContainer,
+} from "./styles";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { Footer } from "../../components/Layout/Footer";
 
 export default function Login() {
   const [isSpinnerActive, setIsSpinnerActive] = useState(false);
@@ -41,7 +48,7 @@ export default function Login() {
             await routeChange();
           }}
         >
-          {({ values }) => (
+          {({ values, errors, touched }) => (
             <Form>
               <FormBox>
                 <label htmlFor="email">Login</label>
@@ -51,11 +58,11 @@ export default function Login() {
                   name="email"
                   placeholder="e-mail"
                 />
-                <ErrorMessage
-                  name="email"
-                  component="div"
-                  className="emailFieldError"
-                />
+                {errors.email && touched.email ? (
+                  <div className="errorMessage">{errors.email}</div>
+                ) : (
+                  <div className="nullErrorMessage"></div>
+                )}
               </FormBox>
 
               <FormBox>
@@ -68,11 +75,11 @@ export default function Login() {
                   name="password"
                   placeholder="senha"
                 />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="passwordFieldError"
-                />
+                {errors.password && touched.password ? (
+                  <div className="errorMessage">{errors.password}</div>
+                ) : (
+                  <div className="nullErrorMessage"></div>
+                )}
               </FormBox>
 
               <LoginButton>
@@ -91,6 +98,10 @@ export default function Login() {
           )}
         </Formik>
       </LoginBox>
+
+      <LoginFooterContainer>
+        <Footer />
+      </LoginFooterContainer>
     </LoginContainer>
   );
 }

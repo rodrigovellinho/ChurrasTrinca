@@ -2,22 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
 `;
 
 export const CardsContainer = styled.div`
   width: 50%;
-  margin: -20px auto;
+  margin: -20px auto 20px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-row-gap: 30px;
   justify-items: center;
   align-items: center;
-  max-height: 430px;
-  overflow-y: auto;
 
   @media (max-width: 1128px) {
     grid-template-columns: 1fr;
@@ -32,4 +27,8 @@ export const SpinnerContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
+`;
+
+export const AgendaFooterContainer = styled.div`
+  padding: 20px 0 20px 0;
 `;

@@ -4,6 +4,7 @@ import {
   CardContainer,
   NewChurrasContainer,
   ButtonContainer,
+  NewChurraasFooterContainer,
 } from "./styles";
 import { Formik, Field, Form, ErrorMessage, FieldArray } from "formik";
 import { Footer } from "../../components/Layout/Footer";
@@ -78,6 +79,12 @@ export default function NewChurrasEvent() {
   const validationSchema = Yup.object({
     name: Yup.string().required("Nome obrigatório"),
     day: Yup.date().required("Data obrigatória").nullable(),
+    valueWithDrinks: Yup.number()
+      .typeError("Escolha um valor")
+      .min(0, "Valor mínimo 0"),
+    valueWithoutDrinks: Yup.number()
+      .typeError("Escolha um valor")
+      .min(0, "Valor mínimo 0"),
     guests: Yup.array().of(
       Yup.object().shape({
         name: Yup.string().required("Nome obrigatório"),
@@ -97,10 +104,10 @@ export default function NewChurrasEvent() {
             await onSubmitForm(values);
           }}
         >
-          {({ values }) => (
+          {({ errors, touched, values }) => (
             <Form>
               <ChurrasContainer>
-                <div className="basicInformationContainer">
+                <div className="formControl">
                   <label htmlFor="name">Nome do Churras:</label>
                   <Field
                     className="nomeChurras"
@@ -109,24 +116,25 @@ export default function NewChurrasEvent() {
                     name={`name`}
                     placeholder="ex: Churras de aniversário"
                   />
-                  <ErrorMessage
-                    name={`name`}
-                    component="div"
-                    className="nameFieldError"
-                  />
+                  {errors.name && touched.name ? (
+                    <div className="errorMessage">{errors.name}</div>
+                  ) : (
+                    <div className="nullErrorMessage"></div>
+                  )}
                 </div>
 
-                <div className="basicInformationContainer">
+                <div className="formControl">
                   <label htmlFor="day">Dia do Churras:</label>
                   <DatePickerField name={`day`} />
-                  <ErrorMessage
-                    name={`day`}
-                    component="div"
-                    className="dateFieldError"
-                  />
+                  {errors.day && touched.day ? (
+                    <div className="errorMessage">{errors.day}</div>
+                  ) : (
+                    <div className="nullErrorMessage"></div>
+                  )}
                 </div>
-                <div className="suggestedValueContainer">
-                  <div className="lineContainer">
+
+                <div className="valuesControl">
+                  <div className="formControl">
                     <label htmlFor="valueWithDrinks">Valor com bebida:</label>
                     <Field
                       className="valueWithDrinks"
@@ -136,8 +144,16 @@ export default function NewChurrasEvent() {
                       placeholder="10,00"
                       min={0}
                     />
+                    {errors.valueWithDrinks && touched.valueWithDrinks ? (
+                      <div className="errorMessage">
+                        {errors.valueWithDrinks}
+                      </div>
+                    ) : (
+                      <div className="nullErrorMessage"></div>
+                    )}
                   </div>
-                  <div className="lineContainer">
+
+                  <div className="formControl">
                     <label htmlFor="valueWithoutDrinks">
                       Valor sem bebida:
                     </label>
@@ -149,9 +165,17 @@ export default function NewChurrasEvent() {
                       placeholder="10,00"
                       min={0}
                     />
+                    {errors.valueWithoutDrinks && touched.valueWithoutDrinks ? (
+                      <div className="errorMessage">
+                        {errors.valueWithoutDrinks}
+                      </div>
+                    ) : (
+                      <div className="nullErrorMessage"></div>
+                    )}
                   </div>
                 </div>
-                <div className="commentsContainer">
+
+                <div className="formControl comments">
                   <label htmlFor="comments">Observações do churras</label>
                   <Field
                     as="textarea"
@@ -181,6 +205,13 @@ export default function NewChurrasEvent() {
                                 type="text"
                                 className="inputField name"
                               />
+                              <div className="errorMessageDiv">
+                                <ErrorMessage
+                                  name={`guests.${index}.name`}
+                                  component="div"
+                                  className="fieldError"
+                                />
+                              </div>
                             </div>
                             <div className="col">
                               <label htmlFor={`guests.${index}.value`}>
@@ -192,6 +223,13 @@ export default function NewChurrasEvent() {
                                 className="inputField value"
                                 min={0}
                               />
+                              <div className="errorMessageDiv">
+                                <ErrorMessage
+                                  name={`guests.${index}.value`}
+                                  component="div"
+                                  className="fieldError"
+                                />
+                              </div>
                             </div>
                             <div className="col">
                               {index > 0 && (
@@ -202,20 +240,14 @@ export default function NewChurrasEvent() {
                                     index > 0 ? () => remove(index) : undefined
                                   }
                                 >
-                                  <UserMinus size={24} className="icon" />
+                                  <UserMinus
+                                    size={22}
+                                    className="icon"
+                                    aria-label="Remover participante"
+                                  />
                                 </button>
                               )}
                             </div>
-                            <ErrorMessage
-                              name={`guests.${index}.name`}
-                              component="div"
-                              className="nameFieldError"
-                            />
-                            <ErrorMessage
-                              name={`guests.${index}.value`}
-                              component="div"
-                              className="valueFieldError"
-                            />
                           </div>
                         ))}
 
@@ -231,17 +263,21 @@ export default function NewChurrasEvent() {
                           })
                         }
                       >
-                        <UserPlus size={28} />
+                        <UserPlus
+                          size={26}
+                          aria-label="Adicionar participante"
+                        />
                       </button>
                     </div>
                   )}
                 </FieldArray>
               </GuestsContainer>
+
               <ButtonContainer>
                 <Link to="/agenda">
-                  <button className="returnButton">Voltar</button>
+                  <button aria-label="Voltar ao menu">Voltar</button>
                 </Link>
-                <button type="submit" className="addChurrastButton">
+                <button type="submit" aria-label="Adicionar churrasco">
                   Adicionar Churras
                 </button>
               </ButtonContainer>
@@ -249,7 +285,9 @@ export default function NewChurrasEvent() {
           )}
         </Formik>
       </CardContainer>
-      <Footer />
+      <NewChurraasFooterContainer>
+        <Footer />
+      </NewChurraasFooterContainer>
     </NewChurrasContainer>
   );
 }

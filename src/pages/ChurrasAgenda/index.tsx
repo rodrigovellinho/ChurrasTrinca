@@ -1,5 +1,10 @@
 import React, { useContext } from "react";
-import { Container, CardsContainer, SpinnerContainer } from "./styles";
+import {
+  Container,
+  CardsContainer,
+  SpinnerContainer,
+  AgendaFooterContainer,
+} from "./styles";
 import ChurrasCard from "../../components/UI/ChurrasCard";
 import AddChurrasCard from "../../components/UI/AddChurrasCard";
 import {
@@ -7,6 +12,7 @@ import {
   ChurrasContextData,
 } from "../../store/ChurrasProvider";
 import { Spinner } from "../../components/UI/Spinner";
+import { Footer } from "../../components/Layout/Footer";
 
 export default function ChurrasAgenda() {
   const { churrascos } = useContext(ChurrasContext) as ChurrasContextData;
@@ -33,6 +39,9 @@ export default function ChurrasAgenda() {
         ))}
         <AddChurrasCard />
       </CardsContainer>
+      <AgendaFooterContainer>
+        <Footer />
+      </AgendaFooterContainer>
     </Container>
   );
 }

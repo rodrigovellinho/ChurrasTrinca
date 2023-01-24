@@ -6,258 +6,159 @@ export const NewChurrasContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-top: -30px;
-  z-index: 10;
 
   @media (max-width: 1024px) {
-    label {
-      max-width: 160px;
-    }
-
-    input,
-    .datePicker {
-      max-width: 180px;
-    }
-
-    .valueWithDrinks,
-    .valueWithoutDrinks {
-      width: 120px;
-    }
-
-    .commentsContainer {
-      textarea {
-        max-width: 90%;
-      }
-    }
   }
 
   @media (max-width: 768px) {
-    .suggestedValueContainer {
-      input,
-      label {
-        width: 100px;
-      }
-    }
-
-    .deleteGuest {
-      svg {
-        height: 24px;
-        width: 24px;
-      }
-    }
-    .addGuestBtn {
-      svg {
-        height: 24px;
-        width: 24px;
-      }
-    }
-
-    .commentsContainer {
-      textarea {
-        max-width: 85%;
-      }
-    }
   }
   @media (max-width: 600px) {
-    .suggestedValueContainer {
-      input,
-      label {
-        width: 80px;
-      }
-    }
-    .deleteGuest {
-      svg {
-        height: 20px;
-        width: 20px;
-      }
-    }
-    .addGuestBtn {
-      svg {
-        height: 20px;
-        width: 20px;
-      }
-    }
-    .commentsContainer {
-      textarea {
-        max-width: 80%;
-      }
-    }
   }
 `;
 
 export const CardContainer = styled.div`
   box-shadow: 0px 0px 0.67rem rgba(0, 0, 0, 0.06);
-  width: 50%;
   margin-top: -20px;
   background: ${(props) => props.theme["white"]};
   border-radius: 2px;
-  padding: 10px;
-  max-height: 450px;
-  overflow: auto;
+  padding: 10px 20px 20px 20px;
+  width: 40%;
+  z-index: 1001;
 `;
 
 export const ChurrasContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 15px;
+  gap: 5px;
 
-  label {
-    display: flex;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-left: 20px;
-    width: 180px;
-  }
+  .formControl {
+    margin-top: 10px;
 
-  input {
-    width: 250px;
-    border: none;
-    border-bottom: 1px solid ${(props) => props.theme["yellow-700"]};
-    text-align: center;
-
-    ::placeholder {
-      text-align: center;
-      border-bottom: 1px solid ${(props) => props.theme["gray-100"]};
-    }
-  }
-
-  .basicInformationContainer {
-    display: flex;
-    align-items: flex-end;
-
-    .datePicker {
-      text-align: center;
-    }
-
-    .nameFieldError {
-      color: ${(props) => props.theme["red-500"]};
-      font-size: 0.75rem;
-      margin-left: 10px;
-    }
-
-    .dateFieldError {
-      color: ${(props) => props.theme["red-500"]};
-      font-size: 0.75rem;
-      margin-left: 10px;
-    }
-  }
-
-  .suggestedValueContainer {
-    display: flex;
-    align-items: flex-end;
-
-    .lineContainer {
+    label {
       display: flex;
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
-      input {
-        width: 150px;
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid ${(props) => props.theme["yellow-700"]};
+      border-radius: 2px;
+      text-align: flex-start;
+      margin-top: 5px;
+      padding: 2px 2px 0 2px;
+
+      ::placeholder {
+        text-align: flex-start;
+        border-bottom: 1px solid ${(props) => props.theme["gray-100"]};
+        opacity: 0.9;
       }
     }
 
-    @media (max-width: 1024px) {
-      flex-direction: column;
-      align-items: flex-start;
+    input:focus {
+      background-color: ${(props) => props.theme["gray-300"]};
+    }
+
+    .datePicker {
+      text-align: flex-start;
+    }
+
+    .errorMessage {
+      color: ${(props) => props.theme["red-500"]};
+      font-size: 0.75rem;
+      margin-top: 1px;
+    }
+    .nullErrorMessage {
+      min-height: 14px;
     }
   }
 
-  .commentsContainer {
+  .valuesControl {
     display: flex;
-    flex-direction: column;
-    margin-top: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 30px;
 
-    label {
-      width: 200px;
+    .formControl {
+      width: 100%;
     }
+  }
 
+  .comments {
     textarea {
-      width: 95%;
-      height: 50px;
-      align-self: center;
-      margin-top: 10px;
+      width: 100%;
+      margin-top: 5px;
       border: 1px solid ${(props) => props.theme["yellow-700"]};
       border-radius: 4px;
       padding: 5px;
+    }
+
+    textarea:focus {
+      border: 2px solid ${(props) => props.theme["yellow-700"]};
     }
   }
 `;
 
 export const GuestsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   margin-top: 15px;
-  margin-left: 20px;
 
   span {
     font-size: 1rem;
     font-weight: 700;
-    width: 150px;
   }
 
   .guest {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: center;
     margin-top: 15px;
-    width: 100%;
     gap: 1rem;
 
     label {
       font-size: 1rem;
       font-weight: 500;
-      display: flex;
-      justify-content: flex-start;
     }
+
     .inputField {
-      width: 55%;
+      width: 100%;
       height: 30px;
       border: none;
       border-bottom: 1px solid ${(props) => props.theme["yellow-700"]};
     }
-    .name {
-      width: 300px;
+
+    input:focus {
+      background-color: ${(props) => props.theme["gray-300"]};
     }
-    .value {
-      width: 150px;
-    }
-    .nameFieldError {
+
+
+    .fieldError {
       color: ${(props) => props.theme["red-500"]};
       font-size: 0.75rem;
-      text-align: center;
-      margin-top: 10px;
-    }
-    .valueFieldError {
-      color: ${(props) => props.theme["red-500"]};
-      font-size: 0.75rem;
-      text-align: center;
-      margin-top: 10px;
     }
 
-    @media (max-width: 600px) {
-      flex-direction: column;
-      gap: 0;
-      margin-top: 0;
-
-      .name {
-        max-width: 150px;
-      }
-      .value {
-        width: 150px;
-      }
-
-      button {
-        margin-top: 5px;
-      }
+    .errorMessageDiv {
+      height: 25px;
     }
+
+    /* @media (max-width: 600px) {
+      .guest {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid blue;
+        .inputField {
+          height: 10px;
+        }
+      }
+    } */
   }
 
   .deleteGuest {
-    margin-left: 10px;
     background: ${(props) => props.theme["red-500"]};
     border: none;
     color: ${(props) => props.theme["white"]};
-    padding: 5px;
+    padding: 2px 2px 0 2px;
     transition: opacity 0.2s;
     font-size: 0.875rem;
     border-radius: 4px;
@@ -274,7 +175,7 @@ export const GuestsContainer = styled.div`
     padding: 5px;
     transition: opacity 0.2s;
     font-size: 0.875rem;
-    margin-top: 15px;
+
     border-radius: 4px;
     cursor: pointer;
 
@@ -289,7 +190,8 @@ export const ButtonContainer = styled.div`
   margin-top: 15px;
   justify-content: center;
 
-  .returnButton {
+  button {
+    width: 175px;
     padding: 10px;
     font-size: 1.125rem;
     background-color: ${(props) => props.theme["yellow-100"]};
@@ -304,19 +206,8 @@ export const ButtonContainer = styled.div`
       opacity: 0.8;
     }
   }
+`;
 
-  .addChurrastButton {
-    background: ${(props) => props.theme["yellow-100"]};
-    border: none;
-    color: ${(props) => props.theme["black"]};
-    padding: 10px;
-    transition: opacity 0.2s;
-    font-size: 1.125rem;
-    font-weight: 700;
-    cursor: pointer;
-
-    &:hover {
-      opacity: 0.8;
-    }
-  }
+export const NewChurraasFooterContainer = styled.div`
+  padding: 20px 0 20px 0;
 `;

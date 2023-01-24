@@ -36,4 +36,8 @@ export const Container = styled.div`
       font-weight: 700;
     }
   }
+
+  &:hover {
+    transform: scale(1.03);
+  }
 `;

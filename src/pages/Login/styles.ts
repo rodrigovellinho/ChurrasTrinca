@@ -2,17 +2,18 @@ import styled from "styled-components";
 
 export const LoginContainer = styled.div`
   background: ${(props) => props.theme["yellow-100"]};
-  flex: 1;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  width: 100%;
+  height: calc(100vh - 260px);
+  position: absolute;
 `;
 
 export const LoginBox = styled.div`
-  position: absolute;
-  top: -5%;
+  margin-top: -20px;
+  z-index: 1000;
 `;
 
 export const FormBox = styled.div`
@@ -20,7 +21,6 @@ export const FormBox = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  position: relative;
   padding-bottom: 25px;
 
   input {
@@ -40,6 +40,10 @@ export const FormBox = styled.div`
     }
   }
 
+  input:focus {
+    background-color: ${(props) => props.theme["gray-300"]};
+  }
+
   label {
     font-weight: 700;
     font-size: 0.875rem;
@@ -49,25 +53,14 @@ export const FormBox = styled.div`
     margin-top: 11px;
   }
 
-  .emailFieldError {
+  .errorMessage {
     color: ${(props) => props.theme["red-500"]};
     font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 10px;
-    position: absolute;
-    bottom:1%;
+    margin-top: 3px;
   }
-
-  .passwordFieldError{
-    color: ${(props) => props.theme["red-500"]};
-    font-size: 0.75rem;
-    font-weight: 500;
-    margin-top: 10px;
-    min-height: 21px;
-    position: absolute;
-    bottom:1%;  
+  .nullErrorMessage {
+    min-height: 18px;
   }
-
 `;
 
 export const LoginButton = styled.button`
@@ -77,7 +70,7 @@ export const LoginButton = styled.button`
   width: 282px;
   border: none !important;
   cursor: pointer;
-  margin-top: 53px;
+  margin-top: 25px;
   transform: opacity,   
   transition: opacity 0.5s ease-in-out;
   position: relative;
@@ -127,4 +120,8 @@ export const LoginButton = styled.button`
   }
 `;
 
-
+export const LoginFooterContainer = styled.div`
+  background: ${(props) => props.theme["yellow-100"]};
+  position: absolute;
+  bottom: 20px;
+`;

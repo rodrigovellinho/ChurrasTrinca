@@ -4,8 +4,7 @@ export const Container = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100vh;
+  align-items: center; 
   margin-top: -20px;
   z-index: 20;
 `;
@@ -14,13 +13,10 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.06);
-  width: 60%;
+  width: 65%;
   margin-top: -20px;
   background: ${(props) => props.theme["white"]};
   border-radius: 2px;
-  height: 80%;
-  max-height: 450px;
-  overflow: auto;
   position: relative;
   padding: 25px 25px 0 25px;
 `;
@@ -100,6 +96,7 @@ export const ButtonContainer = styled.div`
   margin-top: 25px;
   margin-bottom: 10px;
   justify-content: center;
+  margin-left: 20px;
 
   .returnButton {
     padding: 10px;
@@ -117,3 +114,8 @@ export const ButtonContainer = styled.div`
     }
   }
 `;
+
+export const ChurrasListFooterContainer = styled.div`
+  padding: 20px 0 20px 0;
+`;
+
