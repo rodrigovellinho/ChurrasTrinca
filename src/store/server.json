@@ -1,0 +1,109 @@
+{
+  "churras": [
+    {
+      "id": 6.630211313885653,
+      "name": "Churras da Mari",
+      "day": "02/01/2023",
+      "valueWithDrinks": 50,
+      "valueWithoutDrinks": 40,
+      "comments": "Chegar às 17h",
+      "createdAt": "2023-01-19T00:42:54.365Z",
+      "guests": [
+        {
+          "guestId": "id2",
+          "name": "Mari",
+          "value": 50,
+          "isPayed": true
+        },
+        {
+          "guestId": "id3",
+          "name": "João",
+          "value": 40,
+          "isPayed": false
+        },
+        {
+          "guestId": "id4",
+          "name": "Pedro",
+          "value": 50,
+          "isPayed": true
+        }
+      ]
+    },
+    {
+      "id": 14.032543759307924,
+      "name": "Churras do Pedro",
+      "day": "31/01/2023",
+      "valueWithDrinks": 50,
+      "valueWithoutDrinks": 40,
+      "comments": "Chegar às 18h, trazer toda sua simpatia",
+      "createdAt": "2023-01-20T00:42:54.365Z",
+      "guests": [
+        {
+          "guestId": "id2",
+          "name": "Pedro",
+          "value": 50,
+          "isPayed": true
+        },
+        {
+          "guestId": "id3",
+          "name": "Camila",
+          "value": 50,
+          "isPayed": true
+        },
+        {
+          "guestId": "id4",
+          "name": "Jessica",
+          "value": 40,
+          "isPayed": false
+        },
+        {
+          "guestId": "id5",
+          "name": "Paulo",
+          "value": 40,
+          "isPayed": true
+        }
+      ]
+    },
+    {
+      "id": 14.378392060141785,
+      "name": "Pagodão fullstack",
+      "day": "15/02/2023",
+      "valueWithDrinks": 60,
+      "valueWithoutDrinks": 30,
+      "comments": "Trazer os instrumento de pagode e seu samba no pé. O evento começa às 16h",
+      "createdAt": "2023-01-20T00:47:17.406Z",
+      "guests": [
+        {
+          "guestId": "id9",
+          "name": "Zeca Pagodinho",
+          "value": 60,
+          "isPayed": true
+        },
+        {
+          "guestId": "id10",
+          "name": "Belo",
+          "value": 60,
+          "isPayed": true
+        },
+        {
+          "guestId": "id11",
+          "name": "Péricles",
+          "value": 60,
+          "isPayed": false
+        },
+        {
+          "guestId": "id12",
+          "name": "Alcione",
+          "value": 60,
+          "isPayed": true
+        },
+        {
+          "guestId": "id13",
+          "name": "Alexandre Pires",
+          "value": 60,
+          "isPayed": true
+        }
+      ]
+    }
+  ]
+}

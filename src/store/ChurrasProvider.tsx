@@ -6,6 +6,7 @@ import {
   useEffect,
 } from "react";
 import { api } from "../services/axios";
+import data from "./server.json";
 
 interface ChurrasContextProps {
   children: ReactNode;
@@ -38,60 +39,54 @@ const ChurrasContext = createContext<ChurrasContextData>(
 );
 
 const ChurrasProvider = ({ children }: ChurrasContextProps): JSX.Element => {
-  const [churrascos, setChurrascos] = useState<Churrasco[]>([]);
+  const [churrascos, setChurrascos] = useState<Churrasco[]>(() => {
+    const storagedChurrascos = localStorage.getItem("storagedChurrascos");
 
-  const fetchTransactions = useCallback(async (query?: string) => {
-    const response = await api.get("churras", {
-      params: {
-        q: query,
-        _sort: "createdAt",
-        _order: "asc",
-      },
-    });
-    setChurrascos(response.data);
-  }, []);
+    if (storagedChurrascos) {
+      return JSON.parse(storagedChurrascos);
+    }
 
-  useEffect(() => {
-    fetchTransactions();
-  }, [fetchTransactions]);
+    return data.churras;
+  });
 
-  const addChurras = useCallback(async (churrasco: Churrasco) => {
-    const response = await api.post("churras", {
-      ...churrasco,
-    });
-    setChurrascos((state) => [response.data, ...state]);
-  }, []);
+  const addChurras = useCallback(
+    async (churrasco: Churrasco) => {
+      const newState = [...churrascos, churrasco];
+      setChurrascos(newState);
+
+      localStorage.setItem("storagedChurrascos", JSON.stringify(newState));
+    },
+    [churrascos]
+  );
 
   const toogleGuest = useCallback(
-    async (churrasId: string, guestId: string) => {
+    (churrasId: string, guestId: string) => {
       let churrasDetails = churrascos.find((churrasco) => {
         return churrasco.id === Number(churrasId);
       });
 
       const { guests } = churrasDetails;
 
-      const newGuests = guests.map((guest) => {
+      const toggleGuests = guests.map((guest) => {
         if (guest.guestId === guestId) {
           return { ...guest, isPayed: !guest.isPayed };
         }
         return guest;
       });
 
-      let newChurrasDetails = { ...churrasDetails, guests: newGuests };
-
-      await api.patch(`churras/${churrasId}`, {
-        ...newChurrasDetails,
-        guests: newGuests,
-      });
-
       const newChurrasState = churrascos.map((churras) => {
         if (churras.id === Number(churrasId)) {
-          return { ...churras, guests: newGuests };
+          return { ...churras, guests: toggleGuests };
         }
         return churras;
       });
 
       setChurrascos(newChurrasState);
+
+      localStorage.setItem(
+        "storagedChurrascos",
+        JSON.stringify(newChurrasState)
+      );
     },
     [churrascos]
   );

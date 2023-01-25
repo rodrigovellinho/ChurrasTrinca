@@ -1,0 +1,57 @@
+/*  const fetchTransactions = useCallback(async (query?: string) => {
+    const response = await api.get("churras", {
+        params: {
+            q: query,
+            _sort: "createdAt",
+            _order: "asc",
+        },
+    });
+    console.log("churras", response);
+    setChurrascos(response.data);
+}, []);
+
+useEffect(() => {
+    fetchTransactions();
+}, [fetchTransactions]);
+
+
+const addChurras = useCallback(async (churrasco: Churrasco) => {
+    const response = await api.post("churras", {
+        ...churrasco,
+    });
+    setChurrascos((state) => [response.data, ...state]);
+}, []); 
+
+const toogleGuest = useCallback(
+    async (churrasId: string, guestId: string) => {
+      let churrasDetails = churrascos.find((churrasco) => {
+        return churrasco.id === Number(churrasId);
+      });
+
+      const { guests } = churrasDetails;
+
+      const newGuests = guests.map((guest) => {
+        if (guest.guestId === guestId) {
+          return { ...guest, isPayed: !guest.isPayed };
+        }
+        return guest;
+      });
+
+      let newChurrasDetails = { ...churrasDetails, guests: newGuests };
+
+      await api.patch(`churras/${churrasId}`, {
+        ...newChurrasDetails,
+        guests: newGuests,
+      });
+
+      const newChurrasState = churrascos.map((churras) => {
+        if (churras.id === Number(churrasId)) {
+          return { ...churras, guests: newGuests };
+        }
+        return churras;
+      });
+
+      setChurrascos(newChurrasState);
+    },
+    [churrascos]
+  ); */

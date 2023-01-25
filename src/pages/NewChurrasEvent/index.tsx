@@ -88,7 +88,9 @@ export default function NewChurrasEvent() {
     guests: Yup.array().of(
       Yup.object().shape({
         name: Yup.string().required("Nome obrigatório"),
-        value: Yup.number().required("Valor obrigatório").nullable(),
+        value: Yup.number()
+          .required("Valor obrigatório")
+          .min(0, "Valor mínimo 0"),
       })
     ),
   });
