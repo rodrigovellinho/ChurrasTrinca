@@ -25,5 +25,17 @@ export const HeaderContainer = styled.header`
     transform: translate(-50%, -50%);
     font-weight: 800;
     font-size: 2rem;
-  }
+    }
+
+    @media (max-width: 768px) {
+      span {
+            min-width: 275px;
+        }
+    }
+
+    @media (max-width: 480px) {
+      span {
+        min-width:245px;
+        }
+    }
 `;

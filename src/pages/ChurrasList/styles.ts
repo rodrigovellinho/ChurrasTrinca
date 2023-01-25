@@ -4,7 +4,7 @@ export const Container = styled.div`
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   margin-top: -20px;
   z-index: 20;
 `;
@@ -19,6 +19,16 @@ export const FormContainer = styled.div`
   border-radius: 2px;
   position: relative;
   padding: 25px 25px 0 25px;
+
+  @media (max-width: 1200px) {
+    width: 75%;
+  }
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+  @media (max-width: 768px) {
+    width: 85%;
+  }
 `;
 
 export const BasicInfoContainer = styled.div`
@@ -32,10 +42,26 @@ export const BasicInfoContainer = styled.div`
     justify-content: space-between;
     width: 100%;
 
-    .churrasDay,
-    .churrasName {
+    .churrasDay {
       font-weight: 800;
       font-size: 1.75rem;
+
+      .icon {
+        @media (max-width: 480px) {
+          width: 80px;
+        }
+      }
+    }
+
+    .churrasName {
+      font-weight: 800;
+      font-size: 2.25rem;
+      @media (max-width: 768px) {
+        font-size: 1.75rem;
+      }
+      @media (max-width: 480px) {
+        font-size: 1.5rem;
+      }
     }
 
     .icon {
@@ -51,7 +77,7 @@ export const BasicInfoContainer = styled.div`
 
       span {
         font-weight: 500;
-        font-size: 1.312rem;
+        font-size: 1.313rem;
       }
     }
   }
@@ -65,11 +91,20 @@ export const BasicInfoContainer = styled.div`
     margin-top: 10px;
     span {
       font-weight: 500;
-      font-size: 1.312rem;
+      font-size: 1.313rem;
     }
 
     .valueWithoutDrinks {
       margin-left: 50px;
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
@@ -79,7 +114,7 @@ export const BasicInfoContainer = styled.div`
 
     span {
       font-weight: 500;
-      font-size: 1.312rem;
+      font-size: 1.313rem;
     }
     span:nth-child(2) {
       margin-left: 5px;
@@ -118,4 +153,3 @@ export const ButtonContainer = styled.div`
 export const ChurrasListFooterContainer = styled.div`
   padding: 20px 0 20px 0;
 `;
-

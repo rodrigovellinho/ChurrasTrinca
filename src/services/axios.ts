@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://json-server-churras-trinca.vercel.app/",
+    baseURL: "http://localhost:3333/",
 });
 
 /* http://localhost:3333/ */

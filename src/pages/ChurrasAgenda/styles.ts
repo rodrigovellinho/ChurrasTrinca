@@ -14,10 +14,16 @@ export const CardsContainer = styled.div`
   justify-items: center;
   align-items: center;
 
-  @media (max-width: 1128px) {
+  @media (max-width: 1200px) {
+    width: 60%;
+  }
+  @media (max-width: 1024px) {
+    width: 70%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
     grid-template-columns: 1fr;
     grid-column-gap: 30px;
-    width: 100%;
   }
 `;
 

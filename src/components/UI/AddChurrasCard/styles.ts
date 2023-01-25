@@ -7,6 +7,7 @@ export const Container = styled.div`
   background: ${(props) => props.theme["gray-300"]};
   box-shadow: 2px;
   position: relative;
+  transition: all 0.5s;
 
   .ellipse {
     position: absolute;
@@ -28,16 +29,18 @@ export const Container = styled.div`
     left: 52px;
     bottom: 32px;
     color: ${(props) => props.theme["black"]};
+ 
 
     span {
       text-decoration: none;
       border: none;
-      font-size: 1.312rem;
+      font-size: 1.313rem;
       font-weight: 700;
     }
   }
 
-  &:hover {
+  &:hover{
     transform: scale(1.03);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.16);
   }
 `;

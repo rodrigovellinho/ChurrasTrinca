@@ -7,6 +7,7 @@ export const Container = styled.div`
   background: ${(props) => props.theme["white"]};
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.06);
   z-index: 20;
+  transition: all 0.5s;
 
   span {
     color: ${(props) => props.theme["black"]};
@@ -19,6 +20,7 @@ export const Container = styled.div`
 
   &:hover{
     transform: scale(1.03);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.16);
   }
 `;
 
@@ -42,7 +44,7 @@ export const ContainerMargin = styled.div`
     width: 250px;
     height: 25px;
     font-weight: 700;
-    font-size: 1.75rem;
+    font-size: 1.313rem;
     line-height: 24.65px;
     display: flex;
     justify-content: flex-start;
@@ -58,7 +60,7 @@ export const Details = styled.div`
 
   span {
     margin-left: 10px;
-    font-size: 1.312rem;
+    font-size: 1.313rem;
     font-weight: 500;
   }
 

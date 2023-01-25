@@ -21,20 +21,19 @@ export const GlobalStyle = createGlobalStyle`
 
     @media (max-width: 1024px) {
         *, body {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        *, body {
             font-size: 14px;
         }
     }
-    @media (max-width: 768px) {
-        *, body {
+
+    @media (max-width: 480px) {
+        *, body{
             font-size: 12px;
         }
     }
-
-    @media (max-width: 600px) {
-        *, body{
-            font-size: 10px;
-        }
-    }
 `;
-
-

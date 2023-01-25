@@ -36,7 +36,7 @@ export const FormBox = styled.div`
     &::placeholder {
       font-weight: 400;
       font-style: italic;
-      font-size: 0.75rem;
+      font-size: 1.125rem;
     }
   }
 
@@ -46,7 +46,7 @@ export const FormBox = styled.div`
 
   label {
     font-weight: 700;
-    font-size: 0.875rem;
+    font-size: 1.313rem;
   }
 
   .password {
@@ -55,11 +55,11 @@ export const FormBox = styled.div`
 
   .errorMessage {
     color: ${(props) => props.theme["red-500"]};
-    font-size: 0.75rem;
+    font-size: 0.875rem;
     margin-top: 3px;
   }
   .nullErrorMessage {
-    min-height: 18px;
+    min-height: 20px;
   }
 `;
 
@@ -83,7 +83,7 @@ export const LoginButton = styled.button`
     color: ${(props) => props.theme["white"]};
     text-decoration: none;
     border: none;
-    font-size: 0.75rem;
+    font-size: 1.125rem;
     font-weight: 700;  
     transition: all 0.5s;
   }
