@@ -26,10 +26,9 @@ npm i
 # Rode a aplicação
 npm run dev
 
-# Inicie o json-server
-npm run dev:server
-
 # Acesse http://localhost:3000 no seu navagador
+
+# Importante! A validação de Login é apenas um email e uma senha de quatro caracteres
 ```
 
 <br>
