@@ -242,7 +242,6 @@ export default function NewChurrasEvent() {
                                 >
                                   <UserMinus
                                     size={22}
-                                    className="icon"
                                     aria-label="Remover participante"
                                   />
                                 </button>

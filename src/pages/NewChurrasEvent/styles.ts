@@ -6,14 +6,6 @@ export const NewChurrasContainer = styled.div`
   align-items: center;
   width: 100%;
   margin-top: -30px;
-
-  @media (max-width: 1024px) {
-  }
-
-  @media (max-width: 768px) {
-  }
-  @media (max-width: 600px) {
-  }
 `;
 
 export const CardContainer = styled.div`
@@ -24,6 +16,18 @@ export const CardContainer = styled.div`
   padding: 10px 20px 20px 20px;
   width: 40%;
   z-index: 1001;
+
+  @media (max-width: 1024px) {
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    width: 65%;
+  }
+
+  @media (max-width: 480px) {
+    width: 75%;
+  }
 `;
 
 export const ChurrasContainer = styled.div`
@@ -132,7 +136,6 @@ export const GuestsContainer = styled.div`
       background-color: ${(props) => props.theme["gray-300"]};
     }
 
-
     .fieldError {
       color: ${(props) => props.theme["red-500"]};
       font-size: 0.75rem;
@@ -142,16 +145,18 @@ export const GuestsContainer = styled.div`
       height: 25px;
     }
 
-    /* @media (max-width: 600px) {
-      .guest {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid blue;
-        .inputField {
-          height: 10px;
+    .deleteGuest {
+      svg {
+        @media (max-width: 768px) {
+          width: 20px;
+          height: 20px;
+        }
+        @media (max-width: 600px) {
+          width: 18px;
+          height: 18px;
         }
       }
-    } */
+    }
   }
 
   .deleteGuest {
@@ -174,10 +179,19 @@ export const GuestsContainer = styled.div`
     color: ${(props) => props.theme["white"]};
     padding: 5px;
     transition: opacity 0.2s;
-    font-size: 0.875rem;
-
-    border-radius: 4px;
+     border-radius: 4px;
     cursor: pointer;
+
+    svg {
+      @media (max-width: 768px) {
+        width: 24px;
+        height: 24px;
+      }
+      @media (max-width: 600px) {
+        width: 20px;
+        height: 20px;
+      }
+    }
 
     &:hover {
       opacity: 0.8;
@@ -193,7 +207,7 @@ export const ButtonContainer = styled.div`
   button {
     width: 175px;
     padding: 10px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     background-color: ${(props) => props.theme["yellow-100"]};
     border: none;
     border-radius: 2px;
@@ -201,6 +215,17 @@ export const ButtonContainer = styled.div`
     transition: opacity 0.2s;
     margin-right: 20px;
     cursor: pointer;
+
+    @media (max-width: 815px) {
+      font-size: 0.9rem;
+      height: 42px;
+      padding: 5px;
+      width: 100px;
+    }
+
+    @media (max-width: 480px) {
+      width: 80px;
+    }
 
     &:hover {
       opacity: 0.8;
