@@ -1,9 +1,5 @@
 ## :rocket: Sobre a aplicação
 
-<p align="center">
-  <img src="" alt="">
-</p>
-
 O objetivo da aplicação é um organizador de churrascos. Funcionalidades:
 
 - Incluir um novo churrasco com data, descrição e observações adicionais;
