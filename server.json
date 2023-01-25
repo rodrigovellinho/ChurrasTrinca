@@ -104,23 +104,6 @@
           "isPayed": true
         }
       ]
-    },
-    {
-      "id": 19.990454757374057,
-      "name": "Rodrigo",
-      "day": "09/01/2023",
-      "valueWithDrinks": 12,
-      "valueWithoutDrinks": 12,
-      "comments": "",
-      "createdAt": "2023-01-24T18:47:35.887Z",
-      "guests": [
-        {
-          "guestId": "id10",
-          "name": "wewdew",
-          "value": 2,
-          "isPayed": false
-        }
-      ]
     }
   ]
 }

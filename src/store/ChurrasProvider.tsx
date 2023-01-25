@@ -6,7 +6,7 @@ import {
   useEffect,
 } from "react";
 import { api } from "../services/axios";
-import data from "./server.json";
+import data from "./db.json";
 
 interface ChurrasContextProps {
   children: ReactNode;
