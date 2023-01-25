@@ -122,6 +122,6 @@ export const LoginButton = styled.button`
 
 export const LoginFooterContainer = styled.div`
   background: ${(props) => props.theme["yellow-100"]};
-  position: absolute;
-  bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
