@@ -28,7 +28,7 @@ export default function ChurrasCard(props: ChurrasCardProps) {
   );
 
   return (
-    <Container>
+    <Container aria-label="Acessar Churras">
       <Link to={`/lista/${id}`}>
         <ContainerMargin>
           <span className="eventDate">{props.day}</span>

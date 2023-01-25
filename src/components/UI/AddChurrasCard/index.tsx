@@ -8,7 +8,7 @@ export default function AddChurrasCard() {
   return (
     <Link to="/novochurras">
       <Container>
-        <div className="image">
+        <div className="image" aria-label="Adicionar Churras">
           <img src={Ellipse} alt="Ellipse icon" className="ellipse" />
           <img src={iconBbq} alt="iconBbq icon" className="iconBbq" />
         </div>

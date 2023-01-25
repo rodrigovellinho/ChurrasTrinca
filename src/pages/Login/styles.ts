@@ -85,7 +85,7 @@ export const LoginButton = styled.button`
     border: none;
     font-size: 1.125rem;
     font-weight: 700;  
-    transition: all 0.5s;
+    transition: all 0.3s;
   }
 
  .button__loading {

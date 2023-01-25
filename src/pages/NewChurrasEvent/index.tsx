@@ -236,16 +236,14 @@ export default function NewChurrasEvent() {
                             <div className="col">
                               {index > 0 && (
                                 <button
+                                  aria-label="Remover participante"
                                   type="button"
                                   className="deleteGuest"
                                   onClick={
                                     index > 0 ? () => remove(index) : undefined
                                   }
                                 >
-                                  <UserMinus
-                                    size={22}
-                                    aria-label="Remover participante"
-                                  />
+                                  <UserMinus size={22} />
                                 </button>
                               )}
                             </div>
@@ -253,6 +251,7 @@ export default function NewChurrasEvent() {
                         ))}
 
                       <button
+                        aria-label="Adicionar participante"
                         type="button"
                         className="secondary addGuestBtn"
                         onClick={() =>
@@ -264,10 +263,7 @@ export default function NewChurrasEvent() {
                           })
                         }
                       >
-                        <UserPlus
-                          size={26}
-                          aria-label="Adicionar participante"
-                        />
+                        <UserPlus size={26} />
                       </button>
                     </div>
                   )}
