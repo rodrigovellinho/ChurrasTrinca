@@ -1,9 +1,5 @@
 ## :rocket: Sobre a aplicação
 
-<p align="center">
-  <img src="" alt="">
-</p>
-
 O objetivo da aplicação é um organizador de churrascos. Funcionalidades:
 
 - Incluir um novo churrasco com data, descrição e observações adicionais;
@@ -26,10 +22,9 @@ npm i
 # Rode a aplicação
 npm run dev
 
-# Inicie o json-server
-npm run dev:server
-
 # Acesse http://localhost:3000 no seu navagador
+
+# Importante! A validação de Login é apenas um email e uma senha de quatro caracteres
 ```
 
 <br>
