@@ -7,7 +7,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 305px);
+  height: calc(100vh - 345px);
 `;
 
 export const LoginBox = styled.div`
@@ -122,7 +122,7 @@ export const LoginButton = styled.button`
 
 export const LoginFooterContainer = styled.div`
   background: ${(props) => props.theme["yellow-100"]};
-  padding-top: 5px;
+  padding: 20px 0 20px 0;
   display: flex;
   justify-content: center;
 `;
