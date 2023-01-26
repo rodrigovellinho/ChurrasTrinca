@@ -90,7 +90,8 @@ export default function NewChurrasEvent() {
         name: Yup.string().required("Nome obrigatório"),
         value: Yup.number()
           .required("Valor obrigatório")
-          .min(0, "Valor mínimo 0"),
+          .min(0, "Valor mínimo 0")
+          .nullable(),
       })
     ),
   });
