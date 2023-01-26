@@ -12,6 +12,7 @@ export const LoginContainer = styled.div`
 export const LoginBox = styled.div`
   margin-top: -20px;
   z-index: 1000;
+  min-height: 300px;
 `;
 
 export const FormBox = styled.div`
@@ -20,6 +21,7 @@ export const FormBox = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   padding-bottom: 25px;
+ 
 
   input {
     width: 282px;
