@@ -7,12 +7,13 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: calc(100vh - 300px);
 `;
 
 export const LoginBox = styled.div`
   margin-top: -20px;
   z-index: 1000;
-  min-height: 300px;
+
 `;
 
 export const FormBox = styled.div`
@@ -21,7 +22,6 @@ export const FormBox = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   padding-bottom: 25px;
- 
 
   input {
     width: 282px;
@@ -121,5 +121,7 @@ export const LoginButton = styled.button`
 `;
 
 export const LoginFooterContainer = styled.div`
-  padding: 20px 0 15px 0;
+  background: ${(props) => props.theme["yellow-100"]};
+  display: flex;
+  justify-content: center;
 `;

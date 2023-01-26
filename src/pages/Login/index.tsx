@@ -38,70 +38,71 @@ export default function Login() {
   });
 
   return (
-    <LoginContainer>
-      <LoginBox>
-        <Formik
-          initialValues={initialValues}
-          enableReinitialize={true}
-          validationSchema={validationSchema}
-          onSubmit={async (values) => {
-            await routeChange();
-          }}
-        >
-          {({ values, errors, touched }) => (
-            <Form>
-              <FormBox>
-                <label htmlFor="email">Login</label>
-                <Field
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="e-mail"
-                />
-                {errors.email && touched.email ? (
-                  <div className="errorMessage">{errors.email}</div>
-                ) : (
-                  <div className="nullErrorMessage"></div>
-                )}
-              </FormBox>
+    <>
+      <LoginContainer>
+        <LoginBox>
+          <Formik
+            initialValues={initialValues}
+            enableReinitialize={true}
+            validationSchema={validationSchema}
+            onSubmit={async (values) => {
+              await routeChange();
+            }}
+          >
+            {({ values, errors, touched }) => (
+              <Form>
+                <FormBox>
+                  <label htmlFor="email">Login</label>
+                  <Field
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="e-mail"
+                  />
+                  {errors.email && touched.email ? (
+                    <div className="errorMessage">{errors.email}</div>
+                  ) : (
+                    <div className="nullErrorMessage"></div>
+                  )}
+                </FormBox>
 
-              <FormBox>
-                <label htmlFor="password" className="password">
-                  Senha
-                </label>
-                <Field
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="senha"
-                />
-                {errors.password && touched.password ? (
-                  <div className="errorMessage">{errors.password}</div>
-                ) : (
-                  <div className="nullErrorMessage"></div>
-                )}
-              </FormBox>
+                <FormBox>
+                  <label htmlFor="password" className="password">
+                    Senha
+                  </label>
+                  <Field
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="senha"
+                  />
+                  {errors.password && touched.password ? (
+                    <div className="errorMessage">{errors.password}</div>
+                  ) : (
+                    <div className="nullErrorMessage"></div>
+                  )}
+                </FormBox>
 
-              <LoginButton>
-                <span
-                  className={`button__text ${
-                    isSpinnerActive && "button__loading"
-                  }`}
-                >
-                  Entrar
-                </span>
-                <span
-                  className={`${isSpinnerActive && "button__spinner"}`}
-                ></span>
-              </LoginButton>
-            </Form>
-          )}
-        </Formik>
-      </LoginBox>
-
+                <LoginButton>
+                  <span
+                    className={`button__text ${
+                      isSpinnerActive && "button__loading"
+                    }`}
+                  >
+                    Entrar
+                  </span>
+                  <span
+                    className={`${isSpinnerActive && "button__spinner"}`}
+                  ></span>
+                </LoginButton>
+              </Form>
+            )}
+          </Formik>
+        </LoginBox>
+      </LoginContainer>
       <LoginFooterContainer>
         <Footer />
       </LoginFooterContainer>
-    </LoginContainer>
+    </>
   );
 }
