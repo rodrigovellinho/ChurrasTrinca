@@ -122,7 +122,7 @@ export const LoginButton = styled.button`
 
 export const LoginFooterContainer = styled.div`
   background: ${(props) => props.theme["yellow-100"]};
-  margin-top: 5px;
+  padding-top: 5px;
   display: flex;
   justify-content: center;
 `;
